@@ -1,6 +1,6 @@
 // Singly-Linked List
 // 
-// An unordered unidirectional collection, can only be 
+// An unordered forward collection, can only be 
 // traversed forwards.
 // 
 // A Singly-Linked List represents a sequence of Nodes 
@@ -21,9 +21,9 @@
 
 
 class SinglyLinkedListNode {
-  constructor(value, next = null) {
+  constructor(value) {
     this.value = value
-    this.next = next
+    this.next = null
   }
 }
 
@@ -38,14 +38,15 @@ export default class SinglyLinkedList {
   // - Complexity (Scalability): O(n), where n is the length 
   //   of the List.
   #find(value) {
-    let traversalPointer = this.head
+    let traversalNode = this.head
 
-    while (traversalPointer !== null) {
-      if (traversalPointer.value === value) {
-        return traversalPointer
+
+    while (traversalNode !== null) {
+      if (traversalNode.value === value) {
+        return traversalNode
       }
 
-      traversalPointer = traversalPointer.next
+      traversalNode = traversalNode.next
     }
 
     return null
@@ -58,16 +59,16 @@ export default class SinglyLinkedList {
   //   of the List.
   #findPredecessorOf(value) {
     // Implementation uses the "runner" technique
-    let fastTraversalPointer = this.head
-    let slowTraversalPointer = null
+    let fastTraversalNode = this.head
+    let slowTraversalNode = null
 
-    while (fastTraversalPointer !== null) {
-      if (fastTraversalPointer.value === value) {
-        return slowTraversalPointer
+    while (fastTraversalNode !== null) {
+      if (fastTraversalNode.value === value) {
+        return slowTraversalNode
       }
 
-      slowTraversalPointer = fastTraversalPointer
-      fastTraversalPointer = fastTraversalPointer.next
+      slowTraversalNode = fastTraversalNode
+      fastTraversalNode = fastTraversalNode.next
     }
 
     return null
@@ -77,7 +78,7 @@ export default class SinglyLinkedList {
   // inserts it in the beginning of the List. Returns 
   // an updated List.
   // 
-  // - Complexity (Scalability): O(1)
+  // - Complexity (Scalability): O(1).
   insert(value) {
     const node = new SinglyLinkedListNode(value)
 
@@ -112,24 +113,30 @@ export default class SinglyLinkedList {
   //   of the List.
   remove(value) {
     if (!this.head) {
-      return null
+      return this
     }
 
-    // Special case for removing the head of the List
+    // Special case for removing the head of the List.
     if (this.head.value === value) {
       this.head = this.head.next
       return this
     }
 
     const predecessorOfTheSoughtNode = this.#findPredecessorOf(value)
-    const soughtNode = predecessorOfTheSoughtNode?.next
 
-    // First case is the special case for removing the tail 
-    // of the List
-    if (predecessorOfTheSoughtNode && soughtNode.next === null) {
+    if (predecessorOfTheSoughtNode === null) {
+      return this
+    }
+
+    const soughtNode = predecessorOfTheSoughtNode.next
+    const successorOfTheSoughtNode = soughtNode.next
+
+    // First case is a special case for removing the tail 
+    // of the List.
+    if (soughtNode.next === null) {
       predecessorOfTheSoughtNode.next = null
-    } else if (predecessorOfTheSoughtNode) {
-      predecessorOfTheSoughtNode.next = soughtNode.next
+    } else {
+      predecessorOfTheSoughtNode.next = successorOfTheSoughtNode
     }
 
     return this
@@ -137,7 +144,7 @@ export default class SinglyLinkedList {
 
   // Removes all Nodes from the List. Returns an empty List.
   // 
-  // - Complexity (Scalability): O(1)
+  // - Complexity (Scalability): O(1).
   removeAll() {
     if (this.head) {
       this.head = null
