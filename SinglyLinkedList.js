@@ -7,6 +7,15 @@
 // where each Node contains a value, and a pointer to the 
 // next Node in the List.
 // 
+// Unlike an Array, a Linked List doesn't provide random 
+// access to elements in a collection. That is, if you'd 
+// like to access the Nth element in the List, you'll need 
+// to iterate through all N elements. 
+// 
+// The advantage of a Linked List is that addition and 
+// removal of elements from the beginning of a List is 
+// done efficiently in constant time.
+// 
 // This implementation provides four operations to do with 
 // a Linked List: insert, get, remove, and removeAll.
 // Other implementations are possible.
@@ -110,7 +119,7 @@ export default class SinglyLinkedList {
   // the List. Returns an updated List.
   // 
   // - Complexity (Scalability): O(n), where n is the length 
-  //   of the List.
+  //   of the List (lookup is O(n), removal is O(1)).
   remove(value) {
     if (!this.head) {
       return this
