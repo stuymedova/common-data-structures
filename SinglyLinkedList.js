@@ -1,7 +1,6 @@
 // Singly-Linked List
 // 
-// An unordered forward collection, can only be 
-// traversed forwards.
+// A forward collection, supports only forward traversal.
 // 
 // A Singly-Linked List represents a sequence of Nodes 
 // where each Node contains a value, and a pointer to the 
@@ -26,7 +25,9 @@
 // │       │──┘  │       │──┘  │        │──┘  │       │──┘  │       │
 // └───────┘     └───────┘     └────────┘     └───────┘     └───────┘     
 // 
-// Additional resources: https://www.youtube.com/watch?v=zQI3FyWm144
+// Additional resources: 
+// - https://www.youtube.com/watch?v=zQI3FyWm144
+// - https://www.youtube.com/watch?v=YQs6IC-vgmo
 
 
 class SinglyLinkedListNode {
@@ -41,32 +42,16 @@ export default class SinglyLinkedList {
     this.head = null
   }
 
-  // Returns a Node that contains a sought value if found, 
-  // otherwise null.
-  // 
-  // - Complexity (Scalability): O(n), where n is the length 
-  //   of the List.
-  #find(value) {
-    let traversalNode = this.head
-
-
-    while (traversalNode !== null) {
-      if (traversalNode.value === value) {
-        return traversalNode
-      }
-
-      traversalNode = traversalNode.next
-    }
-
-    return null
-  }
-
   // Returns a predecessor of the Node that contains a sought 
   // value if one is found, otherwise null.
   // 
   // - Complexity (Scalability): O(n), where n is the length 
   //   of the List.
-  #findPredecessorOf(value) {
+  #getPredecessorOf(value) {
+    if (!this.head || !this.head.next) {
+      return null
+    }
+
     // Implementation uses the "runner" technique
     let fastTraversalNode = this.head
     let slowTraversalNode = null
@@ -111,30 +96,42 @@ export default class SinglyLinkedList {
       return null
     }
 
-    const soughtNode = this.#find(value)
-    return soughtNode
+    let soughtNode = null
+    let traversalNode = this.head
+
+    while (traversalNode !== null) {
+      if (traversalNode.value === value) {
+        soughtNode = traversalNode
+        return soughtNode
+      }
+
+      traversalNode = traversalNode.next
+    }
+
+    return null
   }
 
   // Removes the Node that contains the sought value from 
-  // the List. Returns an updated List.
+  // the List. Returns the removed Node or null.
   // 
   // - Complexity (Scalability): O(n), where n is the length 
   //   of the List (lookup is O(n), removal is O(1)).
   remove(value) {
     if (!this.head) {
-      return this
+      return null
     }
 
     // Special case for removing the head of the List.
     if (this.head.value === value) {
+      const oldHead = this.head
       this.head = this.head.next
-      return this
+      return oldHead
     }
 
-    const predecessorOfTheSoughtNode = this.#findPredecessorOf(value)
+    const predecessorOfTheSoughtNode = this.#getPredecessorOf(value)
 
     if (predecessorOfTheSoughtNode === null) {
-      return this
+      return null
     }
 
     const soughtNode = predecessorOfTheSoughtNode.next
@@ -148,7 +145,7 @@ export default class SinglyLinkedList {
       predecessorOfTheSoughtNode.next = successorOfTheSoughtNode
     }
 
-    return this
+    return soughtNode
   }
 
   // Removes all Nodes from the List. Returns an empty List.

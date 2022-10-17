@@ -1,7 +1,7 @@
 // Doubly-Linked List
 // 
-// An unordered bydirectional collection, supports  
-// both forward and backward traversal.
+// A bydirectional collection, supports both forward 
+// and backward traversal.
 // 
 // A Doubly-Linked List represents a sequence of Nodes 
 // where each Node contains a value, a pointer to the 
@@ -29,7 +29,9 @@
 // │       │───┘ │       │───┘ │        │───┘ │       │───┘ │       │
 // └───────┘     └───────┘     └────────┘     └───────┘     └───────┘     
 // 
-// Additional resources: https://www.youtube.com/watch?v=FHMPswJDCvU
+// Additional resources: 
+// - https://www.youtube.com/watch?v=zQI3FyWm144
+// - https://www.youtube.com/watch?v=YQs6IC-vgmo
 
 
 class DoublyLinkedListNode {
@@ -90,7 +92,7 @@ export default class DoublyLinkedList {
   }
 
   // Removes the Node that contains the sought value from 
-  // the List. Returns an updated List.
+  // the List. Returns the removed Node or null.
   // 
   // - Complexity (Scalability): lookup is O(n), where n is 
   //   the length of the List, removal is O(1), O(n) overall.
@@ -99,13 +101,13 @@ export default class DoublyLinkedList {
   //   of the List (lookup is O(n), removal is O(1)).
   remove(value) {
     if (!this.head) {
-      return this
+      return null
     }
 
     const soughtNode = this.get(value)
     
     if (soughtNode === null) {
-      return this
+      return null
     }
 
     const predecessorOfTheSoughtNode = soughtNode.prev
@@ -124,7 +126,7 @@ export default class DoublyLinkedList {
       successorOfTheSoughtNode.prev = predecessorOfTheSoughtNode
     }
     
-    return this
+    return soughtNode
   }
 
   // Removes all Nodes from the List. Returns an empty List.
