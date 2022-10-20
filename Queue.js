@@ -23,6 +23,9 @@ export default class Queue {
 
   // Adds a new element to the end of the Queue. Returns
   // the Queue.
+  // 
+  // - Complexity (Scalability): O(1), occasionally O(n),
+  //   where n is the length of the Queue.
   add(value) {
     this.items.push(value)
     return this
@@ -30,17 +33,24 @@ export default class Queue {
 
   // Removes the first-added element from the front of the 
   // Queue. Returns the removed element.
+  // 
+  // - Complexity (Scalability): O(n), where n is the 
+  //   length of the Queue.
   remove() {
     const removedItem = this.items.shift(1)
     return removedItem
   }
 
   // Returns true if the Queue is empty, otherwise false.
+  // 
+  // - Complexity (Scalability): O(1).
   isEmpty() {
     return (this.items.length === 0)
   }
 
   // Returns an element at the front of the Queue.
+  // 
+  // - Complexity (Scalability): O(1).
   peek() {
     return !this.isEmpty() ? this.items[0] : null
   }

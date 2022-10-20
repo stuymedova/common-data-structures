@@ -29,8 +29,11 @@ export default class Stack {
     this.items = []
   }
 
-  // Adds a new element to the top of the Stack. Returns
+  // Adds a new element to the top of the Stack. Returns 
   // the Stack.
+  // 
+  // - Complexity (Scalability): O(1), occasionally O(n),
+  //   where n is the length of the Stack.
   push(value) {
     this.items.push(value)
     return this
@@ -38,17 +41,23 @@ export default class Stack {
 
   // Removes the most recently-added element from the top 
   // of the Stack. Returns the removed element.
+  // 
+  // - Complexity (Scalability): O(1).
   pop() {
     const removedItem = this.items.pop()
     return removedItem
   }
 
   // Returns true if the Stack is empty, otherwise false.
+  // 
+  // - Complexity (Scalability): O(1).
   isEmpty() {
     return (this.items.length === 0)
   }
 
   // Returns the top of the Stack.
+  // 
+  // - Complexity (Scalability): O(1).
   peek() {
     return !this.isEmpty() ? this.items[this.items.length - 1] : null
   }
