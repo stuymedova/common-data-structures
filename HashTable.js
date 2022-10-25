@@ -18,14 +18,19 @@
 // a Hash Table: set, get, remove, removeAll. Other 
 // implementations are possible.
 // 
-//                        ┌───────┐     ┌──────────┐
-// "Google" ────▶ 32 ───▶ │   0   │ ──▶ │ "Google" │
-//                        ├───────┤     └──────────┘
-//                        │   1   │
-//                        ├───────┤     ┌─────────┬─────────────┐
-// "Adobe" ─────▶ 34 ──┬▶ │   2   │ ──▶ │ "Adobe" │ "Bloomberg" │
-// "Bloomberg" ─▶ 106 ─┘  ├───────┤     └─────────┴─────────────┘
-//                           ...
+//     Hash Function               Hash Table
+//     ‾‾‾‾‾‾‾‾‾‾‾‾‾               ‾‾‾‾‾‾‾‾‾‾‾
+//                        │ ┌───────┐     ┌──────────┐
+// "Google" ────▶ 32 ───▶   │   0   │ ──▶ │ "Google" │
+//                        │ ├───────┤     └──────────┘
+//                          │   1   │
+//                        │ ├───────┤     ┌─────────┬─────────────┐
+// "Adobe" ─────▶ 34 ──┬▶   │   2   │ ──▶ │ "Adobe" │ "Bloomberg" │
+// "Bloomberg" ─▶ 106 ─┘  │ ├───────┤     └─────────┴─────────────┘
+//                             ...
+//                        │ ├───────┤
+//                          │   7   │
+//                        │ └───────┘
 // 
 // Additional resources:  
 // - https://spectrum.ieee.org/hans-peter-luhn-and-the-birth-of-the-hashing-algorithm
@@ -62,7 +67,6 @@ export default class HashTable {
       const unicodeRepresentation = +getUnicodeRepresentation(value)
       hashCode = sumDigits(unicodeRepresentation)
     }
-    console.log(hashCode)
 
     return hashCode
   }
