@@ -1,29 +1,27 @@
 // Singly-Linked List
 // 
-// A forward collection, supports only forward traversal.
-// 
 // A Singly-Linked List represents a sequence of Nodes 
 // where each Node contains a value, and a pointer to the 
 // next Node in the List.
 // 
 // Unlike an Array, a Linked List doesn't provide random 
-// access to elements in a collection. That is, if you'd 
-// like to access the Nth element in the List, you'll need 
-// to iterate through all N elements. 
+// access to the elements of the collection. That is, if 
+// you'd like to access the Nth element in the List, 
+// need to iterate through all N elements.
 // 
-// The advantage of a Linked List is that addition and 
-// removal of elements from the beginning of a List is 
-// done efficiently in constant time.
+// The advantage of a Linked List is that adding and 
+// removing elements from the beginning of a List is done 
+// in constant time.
 // 
 // This implementation provides four operations to do with 
-// a Linked List: insert, get, remove, and removeAll.
+// a Linked List: insert, get, remove, and removeAll. 
 // Other implementations are possible.
 // 
-// ┌───────┐     ┌───────┐     ┌────────┐     ┌───────┐     ┌───────┐     
+// ┌───────┐     ┌───────┐     ┌────────┐     ┌───────┐     ┌───────┐
 // │   1   │  ┌─▶│   5   │  ┌─▶│   12   │  ┌─▶│   7   │  ┌─▶│   3   │
 // ├───────┤  │  ├───────┤  │  ├────────┤  │  ├───────┤  │  ├───────┤
 // │       │──┘  │       │──┘  │        │──┘  │       │──┘  │       │
-// └───────┘     └───────┘     └────────┘     └───────┘     └───────┘     
+// └───────┘     └───────┘     └────────┘     └───────┘     └───────┘
 // 
 // Additional resources: 
 // - https://www.youtube.com/watch?v=zQI3FyWm144
@@ -42,8 +40,8 @@ export default class SinglyLinkedList {
     this.head = null
   }
 
-  // Returns a predecessor of the Node that contains a sought 
-  // value if one is found, otherwise null.
+  // Returns the predecessor of the Node that contains the 
+  // sought value if one is found, otherwise null.
   // 
   // - Complexity (Scalability): O(n), where n is the length 
   //   of the List.
@@ -52,7 +50,7 @@ export default class SinglyLinkedList {
       return null
     }
 
-    // Implementation uses the "runner" technique
+    // Implementation uses the "runner" technique.
     let fastTraversalNode = this.head
     let slowTraversalNode = null
 
@@ -68,9 +66,9 @@ export default class SinglyLinkedList {
     return null
   }
 
-  // Creates a new Node that contains a given value and 
-  // inserts it in the beginning of the List. Returns 
-  // an updated List.
+  // Creates a new Node that contains the given value and 
+  // inserts it at the beginning of the List. Returns 
+  // the updated List.
   // 
   // - Complexity (Scalability): O(1).
   insert(value) {
@@ -111,8 +109,8 @@ export default class SinglyLinkedList {
     return null
   }
 
-  // Removes the Node that contains the sought value from 
-  // the List. Returns the removed Node or null.
+  // Removes and returns the Node that contains the sought 
+  // value if one is found, otherwise returns null.
   // 
   // - Complexity (Scalability): O(n), where n is the length 
   //   of the List (lookup is O(n), removal is O(1)).

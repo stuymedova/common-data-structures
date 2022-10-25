@@ -1,24 +1,24 @@
 // Stack
 // 
 // A data structure that conforms to the LIFO (last in, 
-// first out) rule, meaning that the last element added 
-// is the first one to be removed.
+// first out) rule, meaning that the last item added is 
+// the first one to be removed.
 // 
 // This implementation provides four operations to do with 
 // a Stack: push, pop, isEmpty, and peek. Other 
 // implementations are possible.
 // 
-//    │   ▲
-//    ▼   │
-// ┌─────────┐
-// │    7    │
-// ├─────────┤
-// │   12    │
-// ├─────────┤
-// │    5    │
-// ├─────────┤
-// │    1    │
-// └─────────┘
+//   │   ▲
+//   ▼   │
+// ┌───────┐
+// │   1   │
+// ├───────┤
+// │   5   │
+// ├───────┤
+// │   7   │
+// ├───────┤
+// │   3   │
+// └───────┘
 // 
 // Additional resources: 
 // - https://www.youtube.com/watch?v=hVsNqhEthOk
@@ -26,25 +26,25 @@
 
 export default class Stack {
   constructor() {
-    this.items = []
+    this.stack = []
   }
 
-  // Adds a new element to the top of the Stack. Returns 
-  // the Stack.
+  // Adds a new item to the top of the Stack. Returns the 
+  // updated Stack.
   // 
   // - Complexity (Scalability): O(1), occasionally O(n),
   //   where n is the length of the Stack.
   push(value) {
-    this.items.push(value)
+    this.stack.push(value)
     return this
   }
 
-  // Removes the most recently-added element from the top 
-  // of the Stack. Returns the removed element.
+  // Removes the most recently-added item from the top of 
+  // the Stack. Returns the removed item.
   // 
   // - Complexity (Scalability): O(1).
   pop() {
-    const removedItem = this.items.pop()
+    const removedItem = this.stack.pop()
     return removedItem
   }
 
@@ -52,13 +52,13 @@ export default class Stack {
   // 
   // - Complexity (Scalability): O(1).
   isEmpty() {
-    return (this.items.length === 0)
+    return (this.stack.length === 0)
   }
 
-  // Returns the top of the Stack.
+  // Returns the item at the top of the Stack.
   // 
   // - Complexity (Scalability): O(1).
   peek() {
-    return !this.isEmpty() ? this.items[this.items.length - 1] : null
+    return !this.isEmpty() ? this.stack[this.stack.length - 1] : null
   }
 }

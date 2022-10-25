@@ -1,15 +1,15 @@
 // Queue
 // 
 // A data structure that conforms to the FIFO (first in, 
-// first out) rule, meaning that the first element added 
-// is the first one to be removed.
+// first out) rule, meaning that the first item added is 
+// the first one to be removed.
 // 
 // This implementation provides four operations to do with 
 // a Queue: add, remove, isEmpty, and peek. Other 
 // implementations are possible.
 // 
 //     ┌───────┬───────┬────────┬───────┬───────┐     
-// ───▶│   3   │   7   │   12   │   5   │   1   │───▶
+// ───▶│   1   │   5   │   12   │   7   │   3   │───▶
 //     └───────┴───────┴────────┴───────┴───────┘ 
 // 
 // Additional resources: 
@@ -18,26 +18,26 @@
 
 export default class Queue {
   constructor() {
-    this.items = []
+    this.queue = []
   }
 
-  // Adds a new element to the end of the Queue. Returns
-  // the Queue.
+  // Adds a new item to the end of the Queue. Returns the 
+  // updated Queue.
   // 
   // - Complexity (Scalability): O(1), occasionally O(n),
   //   where n is the length of the Queue.
   add(value) {
-    this.items.push(value)
+    this.queue.push(value)
     return this
   }
 
-  // Removes the first-added element from the front of the 
-  // Queue. Returns the removed element.
+  // Removes the first-added item from the front of the 
+  // Queue. Returns the removed item.
   // 
   // - Complexity (Scalability): O(n), where n is the 
   //   length of the Queue.
   remove() {
-    const removedItem = this.items.shift(1)
+    const removedItem = this.queue.shift(1)
     return removedItem
   }
 
@@ -45,13 +45,13 @@ export default class Queue {
   // 
   // - Complexity (Scalability): O(1).
   isEmpty() {
-    return (this.items.length === 0)
+    return (this.queue.length === 0)
   }
 
-  // Returns an element at the front of the Queue.
+  // Returns the item at the front of the Queue.
   // 
   // - Complexity (Scalability): O(1).
   peek() {
-    return !this.isEmpty() ? this.items[0] : null
+    return !this.isEmpty() ? this.queue[0] : null
   }
 }
