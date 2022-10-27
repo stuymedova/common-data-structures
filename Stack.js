@@ -4,8 +4,8 @@
 // first out) rule, meaning that the last item added is 
 // the first one to be removed.
 // 
-// This implementation provides four operations to do with 
-// a Stack: push, pop, isEmpty, and peek. Other 
+// This implementation provides five operations to do with 
+// a Stack: push, isEmpty, peek, pop, and clear. Other 
 // implementations are possible.
 // 
 //   │   ▲
@@ -32,20 +32,10 @@ export default class Stack {
   // Adds a new item to the top of the Stack. Returns the 
   // updated Stack.
   // 
-  // - Complexity (Scalability): O(1), occasionally O(n),
-  //   where n is the length of the Stack.
+  // - Complexity (Scalability): O(1) on average.
   push(value) {
     this.stack.push(value)
     return this
-  }
-
-  // Removes the most recently-added item from the top of 
-  // the Stack. Returns the removed item.
-  // 
-  // - Complexity (Scalability): O(1).
-  pop() {
-    const removedItem = this.stack.pop()
-    return removedItem
   }
 
   // Returns true if the Stack is empty, otherwise false.
@@ -60,5 +50,23 @@ export default class Stack {
   // - Complexity (Scalability): O(1).
   peek() {
     return !this.isEmpty() ? this.stack[this.stack.length - 1] : null
+  }
+
+  // Removes the most recently-added item from the top of 
+  // the Stack. Returns the removed item.
+  // 
+  // - Complexity (Scalability): O(1).
+  pop() {
+    const removedItem = this.stack.pop()
+    return removedItem
+  }
+
+  // Removes all items from the Stack. Returns an empty 
+  // Stack.
+  // 
+  // - Complexity (Scalability): O(1).
+  clear() {
+    this.stack = []
+    return this
   }
 }

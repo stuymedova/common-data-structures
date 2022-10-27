@@ -37,9 +37,9 @@
 // - https://www.youtube.com/watch?v=nvzVHwrrub0
 
 
-import sumDigits from './utils/sumDigits.js'
-import getUnicodeRepresentation from './utils/getUnicodeRepresentation.js'
-import linearSearch from './utils/linearSearch.js'
+import { getUnicodeRepresentation } from './utils/main.js'
+import { sumDigits } from './utils/main.js'
+import { linearSearch } from './utils/main.js'
 
 export default class HashTable {
   constructor(capacity = 128, customHashFunction = null) {
@@ -146,7 +146,8 @@ export default class HashTable {
     return value
   }
 
-  // Removes all buckets and returns an empty Hash Table.
+  // Removes all buckets from the Hash Table. Returns an 
+  // empty Hash Table.
   // 
   // - Complexity (Scalability): O(1).
   removeAll() {

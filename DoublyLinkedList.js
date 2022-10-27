@@ -31,7 +31,7 @@
 // - https://www.youtube.com/watch?v=YQs6IC-vgmo
 
 
-class DoublyLinkedListNode {
+class Node {
   constructor(value) {
     this.value = value
     this.prev = null
@@ -50,7 +50,7 @@ export default class DoublyLinkedList {
   // 
   // - Complexity (Scalability): O(1).
   insert(value) {
-    const node = new DoublyLinkedListNode(value)
+    const node = new Node(value)
 
     if (!this.head) {
       this.head = node
@@ -127,10 +127,7 @@ export default class DoublyLinkedList {
   // 
   // - Complexity (Scalability): O(1).
   removeAll() {
-    if (this.head) {
-      this.head = null
-    }
-
+    this.head = null
     return this
   }
 }

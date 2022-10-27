@@ -28,7 +28,7 @@
 // - https://www.youtube.com/watch?v=YQs6IC-vgmo
 
 
-class SinglyLinkedListNode {
+class Node {
   constructor(value) {
     this.value = value
     this.next = null
@@ -72,7 +72,7 @@ export default class SinglyLinkedList {
   // 
   // - Complexity (Scalability): O(1).
   insert(value) {
-    const node = new SinglyLinkedListNode(value)
+    const node = new Node(value)
 
     if (!this.head) {
       this.head = node
@@ -150,10 +150,7 @@ export default class SinglyLinkedList {
   // 
   // - Complexity (Scalability): O(1).
   removeAll() {
-    if (this.head) {
-      this.head = null
-    }
-
+    this.head = null
     return this
   }
 }
