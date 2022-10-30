@@ -1,10 +1,13 @@
 // Tree
 // 
-// [Description]
+// A Tree is an instance of a Graph where each node can 
+// have several children, but must have exactly one 
+// parent, except for the root node, which has no parent. 
+// And as such, a tree cannot contain cycles.
 // 
 // This implementation provides four operations to do with 
-// a Tree: get, insert (for the root node and its 
-// immediate children), remove, and removeAll, and one 
+// a Tree: insert (for the root node and its immediate 
+// children), get, remove, and removeAll; and one 
 // operation to do with a Tree Node: insert. Other 
 // implementations are possible.
 // 
@@ -55,8 +58,8 @@ export default class Tree {
   // 
   // - Note: uses a Breadth-First Search algorithm.
   // 
-  // - Complexity (Scalability): O(n), where n is the number
-  //   of Nodes in the Tree.
+  // - Complexity (Scalability): O(n/2), where n is the 
+  //   number of Nodes in the Tree.
   #getParentOf(value) {
     if (!this.root) {
       return null
@@ -99,7 +102,6 @@ export default class Tree {
     if (!this.root) {
       this.root = node
     } else {
-      const node = new Node(value)
       this.root.children.push(node)
     }
     
@@ -111,8 +113,8 @@ export default class Tree {
   // 
   // - Note: uses a Breadth-First Search algorithm.
   // 
-  // - Complexity (Scalability): O(n), where n is the number
-  //   of Nodes in the Tree.
+  // - Complexity (Scalability): O(n/2), where n is the 
+  //   number of Nodes in the Tree.
   get(value) {
     if (!this.root) {
       return null
@@ -139,8 +141,8 @@ export default class Tree {
   // Removes and returns the Node that contains the sought 
   // value if one is found, otherwise returns null.
   // 
-  // - Complexity (Scalability): O(n), where n is the number
-  //   of Nodes in the Tree (lookup is O(n), removal is O(1)).
+  // - Complexity (Scalability): O(n/2), where n is the 
+  //   number of Nodes in the Tree.
   remove(value) {
     if (!this.root) {
       return null
@@ -149,7 +151,6 @@ export default class Tree {
     if (this.root.value === value) {
       const removedNode = this.root
       this.root = null
-
       return removedNode
     }
 

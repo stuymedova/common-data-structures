@@ -6,5 +6,6 @@
 - [Queue](./Queue.js)
 - [Hash Table](./HashTable.js)
 - [Tree](./Tree.js)
+- [BinarySearchTree](./BinarySearchTree.js)
 
-<!-- Tree (Binary Tree, Binary Search Tree) / Trie / Heap (Binary Heap) / Graph -->
+<!-- Trie / Heap (Binary Heap) / Graph -->
