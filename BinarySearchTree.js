@@ -1,9 +1,9 @@
 // Binary Search Tree
 // 
 // A type of a Binary Tree that is structured such as 
-// every node that is less than the parent Node is placed 
-// to the left of such node, and every Node that is 
-// greater — to the right.
+// every node that is less than or equals to the 
+// parent Node is placed to the left of such node, and 
+// every Node that is greater — to the right.
 // 
 // This implementation provides four operations to do with 
 // a Binary Search Tree: insert, get, remove, and 
