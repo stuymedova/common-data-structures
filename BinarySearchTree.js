@@ -38,29 +38,30 @@ export default class BinaryTree {
     this.root = null
   }
 
-  // Returns an array containing a Node and a branch at 
-  // which to insert the Node with the given value.
+  // Returns a location (an array containing parent Node 
+  // and a branch) of a Node that satisfies a given 
+  // predicate. If such Node is not found, returns null.
   // 
   // - Complexity (Scalability): O(log(n)), where n is the 
   //   number of Nodes in the Tree.
-  #getInsertionPoint(value) {
+  #conditionalGet(value, predicate) {
     let traversalNode = this.root
-    let insertionNode = null
-    let insertionBranch = ''
+    let soughtNode = null
+    let soughtBranch = ''
 
     while (traversalNode) {
       if (value <= traversalNode.value) {
-        if (traversalNode.leftBranch === null) {
-          insertionNode = traversalNode
-          insertionBranch = 'leftBranch'
+        if (predicate(traversalNode.leftBranch)) {
+          soughtNode = traversalNode
+          soughtBranch = 'leftBranch'
           break
         } else {
           traversalNode = traversalNode.leftBranch
         }
       } else {
-        if (traversalNode.rightBranch === null) {
-          insertionNode = traversalNode
-          insertionBranch = 'rightBranch'
+        if (predicate(traversalNode.rightBranch)) {
+          soughtNode = traversalNode
+          soughtBranch = 'rightBranch'
           break
         } else {
           traversalNode = traversalNode.rightBranch
@@ -68,40 +69,7 @@ export default class BinaryTree {
       }
     }
 
-    return [insertionNode, insertionBranch]
-  }
-
-  // Returns an array containing a Node and a branch 
-  // from which to remove the Node with the given value.
-  // 
-  // - Complexity (Scalability): O(log(n)), where n is the 
-  //   number of Nodes in the Tree.
-  #getRemovalPoint(value) {
-    let traversalNode = this.root
-    let removalNode = null
-    let removalBranch = ''
-
-    while (traversalNode) {
-      if (value <= traversalNode.value) {
-        if (traversalNode.leftBranch?.value === value) {
-          removalNode = traversalNode
-          removalBranch = 'leftBranch'
-          break
-        } else {
-          traversalNode = traversalNode.leftBranch
-        }
-      } else {
-        if (traversalNode.rightBranch?.value === value) {
-          removalNode = traversalNode
-          removalBranch = 'rightBranch'
-          break
-        } else {
-          traversalNode = traversalNode.rightBranch
-        }
-      }
-    }
-
-    return removalNode ? [removalNode, removalBranch] : null
+    return soughtNode ? [soughtNode, soughtBranch] : null
   }
 
   // Creates a new Node that contains the given value and 
@@ -119,7 +87,7 @@ export default class BinaryTree {
     }
 
     const [insertionNode, insertionBranch] = 
-      this.#getInsertionPoint(value)
+      this.#conditionalGet(value, (node) => node === null)
     insertionNode[insertionBranch] = node
     
     return this
@@ -169,16 +137,18 @@ export default class BinaryTree {
       return removedNode
     }
 
-    const locationOfNode = this.#getRemovalPoint(value)
+    const locationOfNode = 
+      this.#conditionalGet(value, (node) => node.value === value)
 
     if (!locationOfNode) {
       return null
     }
 
-    const [removalNode, removalBranch] = locationOfNode
-    removalNode[removalBranch] = null
+    const [removalNode, soughtBranch] = locationOfNode
+    const removedNode = removalNode[soughtBranch]
+    removalNode[soughtBranch] = null
 
-    return removalNode
+    return removedNode
   }
 
   // Removes all Nodes from the Tree. Returns an empty Tree.
