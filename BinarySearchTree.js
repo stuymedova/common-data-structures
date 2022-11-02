@@ -1,8 +1,8 @@
 // Binary Search Tree
 // 
 // A type of a Binary Tree that is structured such as 
-// every node that is less than or equals to the 
-// parent Node is placed to the left of such node, and 
+// every Node that is less than or equals to the 
+// parent Node is placed to the left of such Node, and 
 // every Node that is greater — to the right.
 // 
 // This implementation provides four operations to do with 
@@ -38,9 +38,10 @@ export default class BinaryTree {
     this.root = null
   }
 
-  // Returns a location (an array containing parent Node 
-  // and a branch) of a Node that satisfies a given 
-  // predicate. If such Node is not found, returns null.
+  // Returns the location (an array containing the parent 
+  // Node and the branch) of the Node that satisfies the 
+  // given predicate. If no such Node is found, returns 
+  // null.
   // 
   // - Complexity (Scalability): O(log(n)), where n is the 
   //   number of Nodes in the Tree.
