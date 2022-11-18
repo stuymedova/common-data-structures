@@ -58,8 +58,8 @@ export default class Tree {
   // 
   // - Note: uses a Breadth-First Search algorithm.
   // 
-  // - Complexity (Scalability): O(n/2), where n is the 
-  //   number of Nodes in the Tree.
+  // - Complexity (Scalability): O(n), where n is the number 
+  //   of Nodes in the Tree.
   #getParentOf(value) {
     if (!this.root) {
       return null
@@ -87,8 +87,8 @@ export default class Tree {
 
   // Creates a new Node that contains the given value and 
   // inserts it at the root if the root element doesn't 
-  // already exist, otherwise as the immediate child of the  
-  // root. Returns the updated Tree.
+  // already exist, otherwise inserts it as the immediate 
+  // child of the root. Returns the updated Tree.
   // 
   // - Note: for attaching children to any other Node (other 
   // than the root), use the insert function provided by the 
@@ -113,8 +113,8 @@ export default class Tree {
   // 
   // - Note: uses a Breadth-First Search algorithm.
   // 
-  // - Complexity (Scalability): O(n/2), where n is the 
-  //   number of Nodes in the Tree.
+  // - Complexity (Scalability): O(n), where n is the number 
+  //   of Nodes in the Tree.
   get(value) {
     if (!this.root) {
       return null
@@ -141,8 +141,8 @@ export default class Tree {
   // Removes and returns the Node that contains the sought 
   // value if one is found, otherwise returns null.
   // 
-  // - Complexity (Scalability): O(n/2), where n is the 
-  //   number of Nodes in the Tree.
+  // - Complexity (Scalability): O(n), where n is the number 
+  //   of Nodes in the Tree.
   remove(value) {
     if (!this.root) {
       return null

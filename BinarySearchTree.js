@@ -43,8 +43,8 @@ export default class BinaryTree {
   // given predicate. If no such Node is found, returns 
   // null.
   // 
-  // - Complexity (Scalability): O(log(n)), where n is the 
-  //   number of Nodes in the Tree.
+  // - Complexity (Scalability): O(n), where n is the number 
+  //   of Nodes in the Tree.
   #conditionalGet(value, predicate) {
     let traversalNode = this.root
     let soughtNode = null
@@ -77,8 +77,8 @@ export default class BinaryTree {
   // inserts it a calculated position. Returns the updated 
   // Tree.
   // 
-  // - Complexity (Scalability): O(log(n)), where n is the 
-  //   number of Nodes in the Tree.
+  // - Complexity (Scalability): O(n), where n is the number 
+  //   of Nodes in the Tree.
   insert(value) {
     const node = new Node(value)
 
@@ -97,8 +97,8 @@ export default class BinaryTree {
   // Returns the Node that contains the sought value if such 
   // is found, otherwise null.
   // 
-  // - Complexity (Scalability): O(log(n)), where n is the 
-  //   number of Nodes in the Tree.
+  // - Complexity (Scalability): O(n), where n is the number 
+  //   of Nodes in the Tree.
   get(value) {
     if (!this.root) {
       return null
@@ -125,8 +125,8 @@ export default class BinaryTree {
   // Removes and returns the Node that contains the sought 
   // value if one is found, otherwise returns null.
   // 
-  // - Complexity (Scalability): O(log(n)), where n is the 
-  //   number of Nodes in the Tree.
+  // - Complexity (Scalability): O(n), where n is the number 
+  //   of Nodes in the Tree.
   remove(value) {
     if (!this.root) {
       return null
