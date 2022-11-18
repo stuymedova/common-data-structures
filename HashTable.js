@@ -152,7 +152,6 @@ export default class HashTable {
   // - Complexity (Scalability): O(1).
   removeAll() {
     this.hashTable = Array(capacity)
-
     return this
   }
 }
