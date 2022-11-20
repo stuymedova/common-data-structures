@@ -8,5 +8,6 @@
 - [Tree](./Tree.js)
 - [Binary Search Tree](./BinarySearchTree.js)
 - [Graph](./Graph.js)
+- [Trie](./Trie.js)
 
-<!-- Heap (Binary Heap) / Trie -->
+<!-- Heap (Binary Heap) -->
