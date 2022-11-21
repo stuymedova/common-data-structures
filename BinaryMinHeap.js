@@ -131,7 +131,7 @@ export default class BinaryMinHeap {
   // 
   // - Complexity (Scalability): O(log(n)), where n is the 
   //   number of items in the Heap.
-  #heapifyUp() {
+  #bubbleUp() {
     let index = this.items.length - 1
 
     while (this.#hasParent(index) && 
@@ -150,7 +150,7 @@ export default class BinaryMinHeap {
   // 
   // - Complexity (Scalability): O(log(n)), where n is the 
   //   number of items in the Heap.
-  #heapifyDown() {
+  #bubbleDown() {
     let index = 0
 
     while (this.#hasLeftChild(index)) {
@@ -171,14 +171,14 @@ export default class BinaryMinHeap {
     return this
   }
 
-  // Insert a new item at the end of the Heap, then 
+  // Inserts a new item at the end of the Heap, then 
   // rebalances the Heap. Returns the Heap.
   // 
   // - Complexity (Scalability): O(log(n)), where n is the 
   //   number of items in the Heap.
   insert(item) {
     this.items.push(item)
-    this.#heapifyUp()
+    this.#bubbleUp()
 
     return this
   }
@@ -207,7 +207,7 @@ export default class BinaryMinHeap {
     const item = this.items[0]
 
     this.items[0] = this.items.pop()
-    this.#heapifyDown() 
+    this.#bubbleDown() 
 
     return item
   }
