@@ -9,5 +9,12 @@
 - [Binary Search Tree](./BinarySearchTree.js)
 - [Graph](./Graph.js)
 - [Trie](./Trie.js)
+- [Binary Min Heap](./BinaryMinHeap.js)
 
-<!-- Heap (Binary Heap) -->
+<!-- 
+
+TODO:
+  - Have removeAll method return the removed structure, not an empty one.
+  - Outsource some methods from the structure to its Nodes.
+
+-->
