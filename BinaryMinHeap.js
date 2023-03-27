@@ -7,7 +7,7 @@
 // A Heap is really good at basic ordering and keeping 
 // track of max and min elements.
 // 
-// This implementation provides three operations to do 
+// This implementation provides four operations to do 
 // with a Heap: insert, peek, extractMin, and removeAll. 
 // Other implementations are possible.
 // 
