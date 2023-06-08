@@ -10,3 +10,8 @@
 - [Graph](./Graph.js)
 - [Trie](./Trie.js)
 - [Binary Min Heap](./BinaryMinHeap.js)
+
+---
+
+See also:
+- [Common Sorting and Searching Algorithms](https://github.com/stuymedova/common-sorting-and-searching-algorithms)
