@@ -37,9 +37,9 @@
 // - https://www.youtube.com/watch?v=nvzVHwrrub0
 
 
-import { getUnicodeRepresentation } from './utils/main.js'
-import { sumDigits } from './utils/main.js'
-import { linearSearch } from './utils/main.js'
+import { getUnicodeRepresentation } from './utilities/main.js'
+import { sumDigits } from './utilities/main.js'
+import { linearSearch } from './utilities/main.js'
 
 export default class HashTable {
   constructor(capacity = 128, customHashFunction = null) {
