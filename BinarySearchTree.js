@@ -1,7 +1,7 @@
 // Binary Search Tree
 // 
 // A type of a Binary Tree that is structured such as 
-// every Node that is less than or equals to the 
+// every Node that is less than or equal to the 
 // parent Node is placed to the left of such Node, and 
 // every Node that is greater — to the right.
 // 
