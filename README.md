@@ -14,4 +14,5 @@
 ---
 
 See also:
+- [Common Design Patterns](https://github.com/stuymedova/common-design-patterns)
 - [Common Sorting and Searching Algorithms](https://github.com/stuymedova/common-sorting-and-searching-algorithms)
