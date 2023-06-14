@@ -37,9 +37,8 @@
 // - https://www.youtube.com/watch?v=nvzVHwrrub0
 
 
-import { getUnicodeRepresentation } from './utilities/main.js'
-import { sumDigits } from './utilities/main.js'
-import { linearSearch } from './utilities/main.js'
+import { getUnicodeRepresentation } from './utilities/getUnicodeRepresentation.js'
+import { sumDigits } from './utilities/sumDigits.js'
 
 export default class HashTable {
   constructor(capacity = 128, customHashFunction = null) {
@@ -64,8 +63,8 @@ export default class HashTable {
     if (typeof value === 'number') {
       hashCode = sumDigits(value)
     } else if (typeof value === 'string') {
-      const unicodeRepresentation = +getUnicodeRepresentation(value)
-      hashCode = sumDigits(unicodeRepresentation)
+      const unicodeRepresentation = getUnicodeRepresentation(value)
+      hashCode = sumDigits(Number(unicodeRepresentation))
     }
 
     return hashCode
@@ -117,10 +116,10 @@ export default class HashTable {
     }
 
     const bucket = this.hashTable[bucketIndex]
-    const indexWithinABucket = linearSearch(bucket, value)
+    const indexWithinABucket = bucket.indexOf(value);
 
     // If the value is not found within a bucket
-    if (indexWithinABucket === null) {
+    if (indexWithinABucket === -1) {
       return null
     }
 

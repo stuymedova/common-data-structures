@@ -22,7 +22,7 @@
 // - https://en.wikipedia.org/wiki/Graph_(abstract_data_type)
 
 
-import { Queue } from './mod.js'
+import { Queue } from '../mod.js'
 
 class Node {
   constructor(value) {

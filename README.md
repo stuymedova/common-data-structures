@@ -1,15 +1,15 @@
 # Common Data Structures
 
-- [Singly-Linked List](./SinglyLinkedList.js)
-- [Doubly-Linked List](./DoublyLinkedList.js)
-- [Stack](./Stack.js)
-- [Queue](./Queue.js)
-- [Hash Table](./HashTable.js)
-- [Tree](./Tree.js)
-- [Binary Search Tree](./BinarySearchTree.js)
-- [Graph](./Graph.js)
-- [Trie](./Trie.js)
-- [Binary Min Heap](./BinaryMinHeap.js)
+- [Singly-Linked List](./data-structures/SinglyLinkedList.js)
+- [Doubly-Linked List](./data-structures/DoublyLinkedList.js)
+- [Stack](./data-structures/Stack.js)
+- [Queue](./data-structures/Queue.js)
+- [Hash Table](./data-structures/HashTable.js)
+- [Tree](./data-structures/Tree.js)
+- [Binary Search Tree](./data-structures/BinarySearchTree.js)
+- [Graph](./data-structures/Graph.js)
+- [Trie](./data-structures/Trie.js)
+- [Binary Min Heap](./data-structures/BinaryMinHeap.js)
 
 ---
 

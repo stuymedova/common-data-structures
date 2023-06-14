@@ -27,7 +27,7 @@
 // - https://en.wikipedia.org/wiki/Tree_traversal
 
 
-import { Queue } from './mod.js'
+import { Queue } from '../mod.js'
 
 class Node {
   constructor(value) {
