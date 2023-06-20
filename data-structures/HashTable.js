@@ -37,8 +37,8 @@
 // - https://www.youtube.com/watch?v=nvzVHwrrub0
 
 
-import { getUnicodeRepresentation } from './utilities/getUnicodeRepresentation.js'
-import { sumDigits } from './utilities/sumDigits.js'
+import getUnicodeRepresentation from './utilities/getUnicodeRepresentation.js'
+import sumDigits from './utilities/sumDigits.js'
 
 export default class HashTable {
   constructor(capacity = 128, customHashFunction = null) {

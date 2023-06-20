@@ -120,7 +120,7 @@ export default class Graph {
     }
 
     for (const child of sourceNode.adjacent) {
-      if (this.hasPathDFS(child, destinationNode, visitedNodes)) {
+      if (this.#hasPathDFS(child, destinationNode, visitedNodes)) {
         return true
       }
     }
