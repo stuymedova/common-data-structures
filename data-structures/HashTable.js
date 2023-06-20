@@ -45,6 +45,7 @@ export default class HashTable {
     this.hashTable = Array(capacity)
     this.capacity = capacity
     this.customHashFunction = customHashFunction
+    return this
   }
 
   // Calculates a hash code by adding all digits of the 

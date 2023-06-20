@@ -31,6 +31,7 @@
 export default class BinaryMinHeap {
   constructor() {
     this.items = []
+    return this
   }
 
   // Returns the supposed position of the left child based 

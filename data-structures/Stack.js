@@ -27,6 +27,7 @@
 export default class Stack {
   constructor() {
     this.stack = []
+    return this
   }
 
   // Adds a new item to the top of the Stack. Returns the 

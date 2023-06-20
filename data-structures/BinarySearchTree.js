@@ -36,6 +36,7 @@ class Node {
 export default class BinaryTree {
   constructor() {
     this.root = null
+    return this
   }
 
   // Returns the location (an array containing the parent 

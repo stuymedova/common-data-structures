@@ -42,6 +42,7 @@ class Node {
 export default class DoublyLinkedList {
   constructor() {
     this.head = null
+    return this
   }
 
   // Creates a new Node that contains the given value and 

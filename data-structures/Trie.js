@@ -111,6 +111,7 @@ class Node {
 export default class Trie {
   constructor() {
     this.root = new Node('*')
+    return this
   }
 
   // Adds a given word to the Trie.

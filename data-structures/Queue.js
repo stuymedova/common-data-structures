@@ -19,6 +19,7 @@
 export default class Queue {
   constructor() {
     this.queue = []
+    return this
   }
 
   // Adds a new item to the end of the Queue. Returns the 

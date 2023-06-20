@@ -38,6 +38,7 @@ class Node {
 export default class SinglyLinkedList {
   constructor() {
     this.head = null
+    return this
   }
 
   // Returns the predecessor of the Node that contains the 

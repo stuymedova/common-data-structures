@@ -51,6 +51,7 @@ class Node {
 export default class Tree {
   constructor() {
     this.root = null
+    return this
   }
 
   // Returns the parent of the Node that contains the sought 

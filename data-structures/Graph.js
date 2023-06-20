@@ -35,6 +35,7 @@ class Node {
 export default class Graph {
   constructor() {
     this.nodes = []
+    return this
   }
 
   // Creates a new Node (aka Vertex) that contains the given 
@@ -94,7 +95,8 @@ export default class Graph {
 
     if (!sourceNode) {
       throw new Error('Source Node is not found.')
-    } else if (!destinationNode) {
+    }
+    if (!destinationNode) {
       throw new Error('Destination Node is not found.')
     }
     
@@ -144,7 +146,8 @@ export default class Graph {
 
     if (!sourceNode) {
       throw new Error('Source Node is not found.')
-    } else if (!destinationNode) {
+    }
+    if (!destinationNode) {
       throw new Error('Destination Node is not found.')
     }
 
@@ -153,7 +156,7 @@ export default class Graph {
     while (!queue.isEmpty()) {
       const currentNode = queue.remove()
 
-      if (currentNode.value = destinationNode.value) {
+      if (currentNode.value === destinationNode.value) {
         return true
       }
 
