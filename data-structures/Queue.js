@@ -18,7 +18,7 @@
 
 export default class Queue {
   constructor() {
-    this.queue = []
+    this.values = []
     return this
   }
 
@@ -27,7 +27,7 @@ export default class Queue {
   //
   // - Complexity (Scalability): O(1) on average.
   add(value) {
-    this.queue.push(value)
+    this.values.push(value)
     return this
   }
 
@@ -35,14 +35,14 @@ export default class Queue {
   //
   // - Complexity (Scalability): O(1).
   isEmpty() {
-    return (this.queue.length === 0)
+    return (this.values.length === 0)
   }
 
   // Returns the item at the front of the Queue.
   //
   // - Complexity (Scalability): O(1).
   peek() {
-    return !this.isEmpty() ? this.queue[0] : null
+    return !this.isEmpty() ? this.values[0] : null
   }
 
   // Removes the first-added item from the front of the
@@ -51,7 +51,7 @@ export default class Queue {
   // - Complexity (Scalability): O(n), where n is the
   //   length of the Queue.
   remove() {
-    const removedItem = this.queue.shift()
+    const removedItem = this.values.shift()
     return removedItem
   }
 
@@ -60,7 +60,7 @@ export default class Queue {
   //
   // - Complexity (Scalability): O(1).
   removeAll() {
-    this.queue = []
+    this.values = []
     return this
   }
 }
